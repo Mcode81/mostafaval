@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mostafa VAL | Gaming & Streaming 🚀</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary-blue: #00b4d8;
+      --primary-red: #ff0055;
+      --kick-green: #53fc18;
+      --yt-red: #ff0000;
+      --dc-blurple: #5865f2;
+      --tt-pink: #fe2c55;
+      --ig-pink: #e1306c;
+      --fb-blue: #1877f2;
+      --bg-dark: #08090d;
+      --card-bg: rgba(20, 24, 33, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 180, 216, 0.12), transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(255, 0, 85, 0.12), transparent 45%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 16px;
+      color: #ffffff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+    }
+
+    /* اللوجو والشارة */
+    .avatar-wrapper {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 18px;
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid transparent;
+      background: linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
+                  linear-gradient(135deg, var(--primary-blue), var(--primary-red)) border-box;
+      box-shadow: 0 0 25px rgba(0, 180, 216, 0.35), 0 0 25px rgba(255, 0, 85, 0.25);
+    }
+
+    .live-badge {
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #eb0400;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      animation: pulse 1.8s infinite;
+      box-shadow: 0 0 12px rgba(235, 4, 0, 0.6);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+      50% { transform: translateX(-50%) scale(1.06); opacity: 0.85; }
+    }
+
+    h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #ffffff, #c7d2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #38bdf8;
+      margin-bottom: 12px;
+    }
+
+    .bio {
+      font-size: 0.92rem;
+      color: #94a3b8;
+      margin-bottom: 26px;
+      line-height: 1.6;
+      padding: 0 8px;
+    }
+
+    /* قائمة الروابط */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+    }
+
+    .btn-content {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-content i {
+      font-size: 1.35rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    .btn-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ألوان وهوفر المنصات */
+    .btn-kick:hover {
+      border-color: var(--kick-green);
+      background: rgba(83, 252, 24, 0.12);
+      color: #c7ffb0;
+    }
+    .btn-kick i { color: var(--kick-green); }
+
+    .btn-yt:hover {
+      border-color: var(--yt-red);
+      background: rgba(255, 0, 0, 0.12);
+      color: #ff9999;
+    }
+    .btn-yt i { color: var(--yt-red); }
+
+    .btn-discord:hover {
+      border-color: var(--dc-blurple);
+      background: rgba(88, 101, 242, 0.12);
+      color: #b3baff;
+    }
+    .btn-discord i { color: var(--dc-blurple); }
+
+    .btn-tiktok:hover {
+      border-color: var(--tt-pink);
+      background: rgba(254, 44, 85, 0.12);
+      color: #ffa1b5;
+    }
+    .btn-tiktok i { color: var(--tt-pink); }
+
+    .btn-ig:hover {
+      border-color: var(--ig-pink);
+      background: rgba(225, 48, 108, 0.12);
+      color: #ffaec8;
+    }
+    .btn-ig i { color: var(--ig-pink); }
+
+    .btn-fb:hover {
+      border-color: var(--fb-blue);
+      background: rgba(24, 119, 242, 0.12);
+      color: #a4ccff;
+    }
+    .btn-fb i { color: var(--fb-blue); }
+
+    /* زر المشاركة */
+    .share-btn {
+      margin-top: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .share-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    /* إشعار Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #10b981;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- الصورة والشارة -->
+    <div class="avatar-wrapper">
+      <img src="avatar.jpg" alt="Mostafa VAL" class="avatar" />
+      <span class="live-badge">LIVE</span>
+    </div>
+
+    <h1>Mostafa VAL</h1>
+    <div class="tagline">Gaming & Streaming 🚀</div>
+    <p class="bio">
+      Welcome to my channel! Covering epic gaming moments, live stream highlights, pro tips, and games like Silkroad Online. Hit subscribe and join the journey! 🔥
+    </p>
+
+    <!-- قائمة الروابط -->
+    <div class="links">
+      <!-- Kick -->
+      <a href="https://kick.com/mostafaabeed1" target="_blank" class="btn-link btn-kick">
+        <div class="btn-content">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Kick</span>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@MostafaAbed1" target="_blank" class="btn-link btn-yt">
+        <div class="btn-content">
+          <i class="fa-brands fa-youtube"></i>
+          <span>YouTube</span>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+
+      <!-- Discord -->
+      <a href="https://discord.gg/sHuKYqTnn" target="_blank" class="btn-link btn-discord">
+        <div class="btn-content">
+          <i class="fa-brands fa-discord"></i>
+          <span>Discord</span>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@mostafa.val" target="_blank" class="btn-link btn-tiktok">
+        <div class="btn-content">
+          <i class="fa-brands fa-tiktok"></i>
+          <span>TikTok</span>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/mostafaabeed" target="_blank" class="btn-link btn-ig">
+        <div class="btn-content">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/profile.php?id=100066466128692" target="_blank" class="btn-link btn-fb">
+        <div class="btn-content">
+          <i class="fa-brands fa-facebook"></i>
+          <span>Facebook</span>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+
+    <!-- زر مشاركة الصفحة -->
+    <button class="share-btn" onclick="copyPageLink()">
+      <i class="fa-solid fa-share-nodes"></i>
+      <span>Share Link</span>
+    </button>
+
+    <footer>
+      Mostafa VAL &copy; 2026 - All Rights Reserved
+    </footer>
+  </div>
+
+  <div id="toast" class="toast">Link copied to clipboard!</div>
+
+  <script>
+    function copyPageLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2200);
+      });
+    }
+  </script>
+
+</body>
+</html>
